@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Transcription and Sentiment Analysis</title>
+</head>
+<body>
+    <h1>Real-time Transcription and Sentiment Analysis</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="audio" accept="audio/*" required>
+        <button type="submit">Submit</button>
+    </form>
+    {% if transcription %}
+        <h2>Transcription:</h2>
+        <p>{{ transcription }}</p>
+    {% endif %}
+    {% if sentiment_analysis %}
+        <h2>Sentiment Analysis:</h2>
+        <p>{{ sentiment_analysis }}</p>
+    {% endif %}
+    {% if error %}
+        <p style="color: red;">Error: {{ error }}</p>
+    {% endif %}
+</body>
+</html>
